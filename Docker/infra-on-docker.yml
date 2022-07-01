@@ -1,0 +1,30 @@
+# docker-compose -f infra-on-docker.yml up --detach
+# docker-compose -f infra-on-docker.yml down --remove-orphans
+
+version: '3.7'
+
+services:
+  mysql-ava:
+    image: mysql:8.0.29
+    container_name: mysql-ava
+    restart: always
+    volumes:
+      - /usr/docker/volumes/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+  
+  php:
+    image: phpmyadmin:5.2.0-apache
+    container_name: phpmyadmin-ava
+    ports:
+      - 8084:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+
+#user: root
+#pass mariadbpass
+#server mysql-ava
