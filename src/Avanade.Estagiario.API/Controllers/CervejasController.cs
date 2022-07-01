@@ -1,6 +1,5 @@
 ﻿using Avanade.Estagiario.API.Domain;
 using Avanade.Estagiario.API.Repositorio;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Avanade.Estagiario.API.Controllers
@@ -25,9 +24,10 @@ namespace Avanade.Estagiario.API.Controllers
             //ctx1.Cervejas.Add(cerveja);
             //ctx1.SaveChanges();
 
-            return Ok();
-
-            //TODO: Trocar para 201
+            return CreatedAtAction(
+                nameof(LerCerveja),
+                new { IdCerveja = cerveja.Id },
+                cerveja);
         }
 
         [HttpGet("{IdCerveja}")]
