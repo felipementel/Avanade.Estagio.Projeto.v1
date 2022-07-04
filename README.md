@@ -33,3 +33,18 @@ dotnet ef database update
 
 5. Execute a aplicação apertando F5 no seu visual studio.
 Pode ser que na primeira execução, o Visual Studio precise que vc aceite algumas licenças certificados https falsos, para execução local. Clique em Yes todas as vezes que for necessário nesse momento.
+
+
+<hr>
+
+###Abaixo um exemplo de um request do tipo POST para criação de uma cerveja no sistema
+
+```json
+{
+  "marca": "Brahma",
+  "nome": "Purol Malte",
+  "gelada": true,
+  "compra": "2022-07-01T13:51:42.584Z",
+  "teorAlcoolico": 4.7
+}
+```
