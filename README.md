@@ -37,7 +37,7 @@ Pode ser que na primeira execução, o Visual Studio precise que vc aceite algum
 
 <hr>
 
-###Abaixo um exemplo de um request do tipo POST para criação de uma cerveja no sistema
+### Abaixo um exemplo de um request do tipo POST para criação de uma cerveja no sistema
 
 ```json
 {
