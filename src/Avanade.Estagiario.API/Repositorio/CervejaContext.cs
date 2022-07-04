@@ -12,19 +12,22 @@ namespace Avanade.Estagiario.API.Repositorio
     {
         public DbSet<Cerveja> Cervejas { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Cerveja>()
-                .HasKey(p => p.Id);
+        public CervejaContext() { }
+        public CervejaContext(DbContextOptions<CervejaContext> options): base(options) { }
 
-            //base.OnModelCreating(modelBuilder);
-        }
+        /* protected override void OnModelCreating(ModelBuilder modelBuilder)
+         {
+             modelBuilder.Entity<Cerveja>()
+                 .HasKey(p => p.Id);
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            string conn = "Server=localhost;Database=Avanade;Uid=root;Pwd=my-secret-pw;";
-            optionsBuilder.UseMySql(conn, ServerVersion.AutoDetect(conn));
-            base.OnConfiguring(optionsBuilder);
-        }
+             //base.OnModelCreating(modelBuilder);
+         }
+
+         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+         {
+             string conn = "Server=localhost;Database=Avanade;Uid=root;Pwd=@Matheus@1996;";
+             optionsBuilder.UseMySql(conn, ServerVersion.AutoDetect(conn));
+             base.OnConfiguring(optionsBuilder);
+         } */
     }
 }
