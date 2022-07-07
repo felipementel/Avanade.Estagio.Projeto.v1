@@ -42,7 +42,7 @@ Pode ser que na primeira execução, o Visual Studio precise que vc aceite algum
 ```json
 {
   "marca": "Brahma",
-  "nome": "Purol Malte",
+  "nome": "Puro Malte",
   "gelada": true,
   "compra": "2022-07-01T13:51:42.584Z",
   "teorAlcoolico": 4.7
